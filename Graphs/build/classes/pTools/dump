@@ -1,0 +1,46 @@
+// All black tiles
+        round = 1;
+        for (int i = 0; i < iRange * iRange - (iRange * iRange * 0.25);) {
+            if (!(i == (iRange * round - 1))) {
+                graph.addEdge(i, i + 2);
+                Debugger.println(i + " to " + (i + 2));
+            }
+
+            if (i + (iRange * 2) < iRange * iRange) {
+                graph.addEdge(i, i + (iRange * 2));
+                Debugger.println(i + " to " + (i + (iRange * 2)));
+            }
+
+            if (i == (iRange * round - 1)) {
+                i++;
+                round++;
+            } else {
+                i += 2;
+            }
+        }
+
+//        // All white tiles
+        round = 1;
+        for (int i = 1; i < iRange * iRange - (iRange * iRange * 0.25);) {
+            if (!(i == (iRange * round - 2))) {
+                graph.addEdge(i, i + 2);
+                Debugger.println(i + " to " + (i + 2));
+            }
+
+            if (i + (iRange * 2) < iRange * iRange) {
+                graph.addEdge(i, i + (iRange * 2));
+                Debugger.println(i + " to " + (i + (iRange * 2)));
+            }
+
+            if (i == (iRange * round - 2)) {
+                i += 3;
+                round++;
+            } else {
+                i += 2;
+            }
+        }
+        /* TODO
+         * for every vertex
+         *      if possible
+         *          addEdge +6 +4 -4 +6
+         */
